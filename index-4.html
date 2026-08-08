@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#08070b">
+<meta name="description" content="ASYAX Digital — Marketing e Vendas. Estratégias para vender mais todos os dias.">
+<title>ASYAX Digital | Marketing e Vendas</title>
+
+<style>
+:root{
+  --bg:#08070b;
+  --card:rgba(255,255,255,.065);
+  --card-hover:rgba(255,255,255,.095);
+  --line:rgba(255,255,255,.11);
+  --text:#fff;
+  --muted:#a9a6b1;
+  --purple:#8d2ca5;
+  --purple-2:#4f2377;
+  --max:560px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--text);
+  background:
+    radial-gradient(600px 360px at 50% -80px, rgba(133,37,157,.34), transparent 68%),
+    radial-gradient(420px 300px at 0% 48%, rgba(73,31,105,.15), transparent 70%),
+    #08070b;
+  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+body:before{
+  content:"";
+  position:fixed; inset:0; pointer-events:none; opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}
+.wrap{
+  width:min(100% - 32px,var(--max));
+  margin:auto;
+  padding:38px 0 32px;
+}
+.topbar{
+  display:flex;
+  justify-content:flex-end;
+  margin-bottom:14px;
+}
+.menu{
+  width:42px;height:42px;border:1px solid var(--line);border-radius:50%;
+  background:rgba(255,255,255,.045);color:#fff;font-size:20px;
+  display:grid;place-items:center;cursor:pointer;
+}
+.profile{text-align:center}
+.avatar-ring{
+  width:116px;height:116px;margin:0 auto 17px;padding:3px;border-radius:50%;
+  background:linear-gradient(135deg,#c34be0,#5b1c72 55%,#1a1022);
+  box-shadow:0 14px 55px rgba(111,30,132,.28);
+}
+.avatar{
+  width:100%;height:100%;border-radius:50%;object-fit:cover;
+  display:block;background:#050509;border:3px solid #08070b;
+}
+.name-row{display:flex;justify-content:center;align-items:center;gap:7px}
+h1{
+  margin:0;font-size:22px;line-height:1.15;font-weight:760;
+  letter-spacing:-.55px;
+}
+.verified{
+  width:17px;height:17px;border-radius:50%;display:grid;place-items:center;
+  background:#8b2da4;color:#fff;font-size:10px;font-weight:900;
+}
+.handle{margin-top:7px;color:#85818d;font-size:13px}
+.bio{
+  max-width:420px;margin:14px auto 0;color:#d4d0d8;
+  font-size:14px;line-height:1.55;
+}
+.bio strong{color:#fff;font-weight:650}
+.cta{
+  display:flex;gap:10px;margin-top:20px;
+}
+.cta a{
+  flex:1;min-height:48px;border-radius:14px;text-decoration:none;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-size:14px;font-weight:720;transition:.2s ease;
+}
+.cta-primary{
+  color:#fff;background:linear-gradient(135deg,#9b35b4,#5b2478);
+  box-shadow:0 10px 28px rgba(121,37,145,.25);
+}
+.cta-secondary{
+  color:#fff;background:rgba(255,255,255,.055);
+  border:1px solid var(--line);
+}
+.cta a:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.metrics{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  margin:25px 0 23px;padding:17px 5px;
+  border:1px solid var(--line);border-radius:18px;
+  background:rgba(255,255,255,.035);
+}
+.metric{text-align:center;position:relative}
+.metric:not(:last-child):after{
+  content:"";position:absolute;right:0;top:4px;width:1px;height:30px;background:var(--line);
+}
+.metric b{display:block;font-size:17px;letter-spacing:-.2px}
+.metric span{display:block;color:#87838e;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+.section-head{
+  display:flex;align-items:center;justify-content:space-between;
+  margin:0 2px 11px;
+}
+.section-head h2{font-size:12px;text-transform:uppercase;letter-spacing:1.7px;color:#8f8b96;margin:0}
+.section-head i{width:45px;height:1px;background:var(--line)}
+.links{display:flex;flex-direction:column;gap:11px}
+.link{
+  position:relative;overflow:hidden;min-height:70px;padding:10px 14px;
+  display:flex;align-items:center;gap:13px;text-decoration:none;color:#fff;
+  border:1px solid var(--line);border-radius:17px;
+  background:linear-gradient(105deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
+  transition:.22s ease;
+}
+.link:before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(155,53,180,.12),transparent 55%);
+  opacity:0;transition:.22s ease;
+}
+.link:hover{transform:translateY(-2px);background:var(--card-hover);border-color:rgba(184,87,208,.32)}
+.link:hover:before{opacity:1}
+.link-main{
+  background:linear-gradient(105deg,rgba(141,44,165,.20),rgba(255,255,255,.045));
+  border-color:rgba(170,72,195,.30);
+}
+.icon{
+  position:relative;z-index:1;flex:none;width:46px;height:46px;border-radius:14px;
+  display:grid;place-items:center;font-size:20px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.07);
+}
+.link-main .icon{background:linear-gradient(135deg,#9b35b4,#55226f)}
+.info{position:relative;z-index:1;min-width:0;flex:1;text-align:left}
+.title{display:block;font-size:14px;font-weight:730;line-height:1.25}
+.sub{
+  display:block;margin-top:4px;color:#8f8b96;font-size:11.5px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.arrow{position:relative;z-index:1;color:#6f6b76;font-size:22px;padding-left:5px}
+.note{
+  margin:19px 0 0;text-align:center;color:#77737e;font-size:11px;line-height:1.5;
+}
+.socials{display:flex;justify-content:center;gap:10px;margin-top:21px}
+.social{
+  width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  text-decoration:none;color:#ddd;background:rgba(255,255,255,.045);
+  border:1px solid var(--line);font-size:12px;font-weight:800;
+  transition:.2s ease;
+}
+.social:hover{background:rgba(255,255,255,.09);transform:translateY(-2px)}
+.footer{text-align:center;margin-top:23px;color:#56525c;font-size:10px;letter-spacing:.3px}
+@media(max-width:420px){
+  .wrap{width:min(100% - 24px,var(--max));padding-top:24px}
+  h1{font-size:20px}.avatar-ring{width:104px;height:104px}
+  .bio{font-size:13px}.metrics{margin-top:21px}
+}
+</style>
+</head>
+
+<body>
+<main class="wrap">
+
+  <div class="topbar">
+    <button class="menu" aria-label="Mais opções" onclick="sharePage()">•••</button>
+  </div>
+
+  <section class="profile">
+    <div class="avatar-ring">
+      <img class="avatar" src="data:image/png;base64,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" alt="Logo ASYAX Digital"
+           onerror="this.style.background='radial-gradient(circle,#19131d,#050509)';">
+    </div>
+
+    <div class="name-row">
+      <h1>ASYAX Digital | Marketing e Vendas</h1>
+      <span class="verified">✓</span>
+    </div>
+
+    <div class="handle">@agencia.asyax</div>
+
+    <p class="bio">
+      <strong>Estratégias para vender mais todos os dias.</strong><br>
+      Marketing, design, tráfego e presença digital para empresas que querem crescer.
+    </p>
+
+    <div class="cta">
+      <a class="cta-primary" href="https://wa.me/5566992583505" target="_blank" rel="noopener">
+        <span>Falar com a ASYAX</span><span>↗</span>
+      </a>
+      <a class="cta-secondary" href="https://asyaxdigital.com.br" target="_blank" rel="noopener">
+        <span>Nosso site</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="metrics" aria-label="Informações da agência">
+    <div class="metric"><b>Marketing</b><span>Estratégia</span></div>
+    <div class="metric"><b>Design</b><span>Criatividade</span></div>
+    <div class="metric"><b>Vendas</b><span>Resultado</span></div>
+  </section>
+
+  <div class="section-head">
+    <h2>Links importantes</h2><i></i>
+  </div>
+
+  <section class="links">
+
+    <a class="link link-main" href="https://wa.me/5566992583505" target="_blank" rel="noopener">
+      <span class="icon">⌁</span>
+      <span class="info">
+        <span class="title">Fale hoje conosco</span>
+        <span class="sub">Solicite um orçamento pelo WhatsApp</span>
+      </span>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="link" href="https://asyaxdigital.com.br" target="_blank" rel="noopener">
+      <span class="icon">↗</span>
+      <span class="info">
+        <span class="title">Conheça nosso site</span>
+        <span class="sub">asyaxdigital.com.br</span>
+      </span>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="link" href="https://g.page/r/CSmH0n9Y0YXZEAE/review" target="_blank" rel="noopener">
+      <span class="icon">★</span>
+      <span class="info">
+        <span class="title">Avalie a ASYAX no Google</span>
+        <span class="sub">Sua avaliação ajuda nossa agência</span>
+      </span>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="link" href="https://www.instagram.com/agencia.asyax/" target="_blank" rel="noopener">
+      <span class="icon">◎</span>
+      <span class="info">
+        <span class="title">Instagram da ASYAX</span>
+        <span class="sub">@agencia.asyax</span>
+      </span>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="link" href="https://wa.me/5566992583505?text=Ol%C3%A1%2C%20quero%20conhecer%20os%20servi%C3%A7os%20da%20ASYAX%20Digital." target="_blank" rel="noopener">
+      <span class="icon">＋</span>
+      <span class="info">
+        <span class="title">Conheça nossos serviços</span>
+        <span class="sub">Encontre a solução ideal para sua empresa</span>
+      </span>
+      <span class="arrow">›</span>
+    </a>
+
+  </section>
+
+  <p class="note">Quem cresce, escolhe diferente.</p>
+
+  <div class="socials">
+    <a class="social" href="https://www.instagram.com/agencia.asyax/" target="_blank" aria-label="Instagram">IG</a>
+    <a class="social" href="https://wa.me/5566992583505" target="_blank" aria-label="WhatsApp">WA</a>
+    <a class="social" href="https://asyaxdigital.com.br" target="_blank" aria-label="Site">WEB</a>
+  </div>
+
+  <div class="footer">ASYAX DIGITAL • MARKETING E VENDAS</div>
+</main>
+
+<script>
+async function sharePage(){
+  const data={title:"ASYAX Digital",text:"Conheça a ASYAX Digital — Marketing e Vendas.",url:window.location.href};
+  if(navigator.share){try{await navigator.share(data)}catch(e){}}
+  else if(navigator.clipboard){await navigator.clipboard.writeText(window.location.href)}
+}
+</script>
+</body>
+</html>
